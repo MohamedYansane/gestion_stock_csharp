@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestionstockModelStoreContainer" CdmEntityContainer="gestionstockEntities">
+    <EntitySetMapping Name="approvisionnement">
+      <EntityTypeMapping TypeName="gestionstockModel.approvisionnement">
+        <MappingFragment StoreEntitySet="approvisionnement">
+          <ScalarProperty Name="qteProd" ColumnName="qteProd" />
+          <ScalarProperty Name="idApp" ColumnName="idApp" />
+          <ScalarProperty Name="idProduit" ColumnName="idProduit" />
+          <ScalarProperty Name="datePeremption" ColumnName="datePeremption" />
+          <ScalarProperty Name="dateApp" ColumnName="dateApp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categorieproduit">
+      <EntityTypeMapping TypeName="gestionstockModel.categorieproduit">
+        <MappingFragment StoreEntitySet="categorieproduit">
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="cat_nom" ColumnName="cat_nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produit">
+      <EntityTypeMapping TypeName="gestionstockModel.produit">
+        <MappingFragment StoreEntitySet="produit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="QuantiteMin" ColumnName="QuantiteMin" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stock">
+      <EntityTypeMapping TypeName="gestionstockModel.stock">
+        <MappingFragment StoreEntitySet="stock">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nomProduit" ColumnName="nomProduit" />
+          <ScalarProperty Name="DateStockage" ColumnName="DateStockage" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CodeProduit" ColumnName="CodeProduit" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="utilisateur">
+      <EntityTypeMapping TypeName="gestionstockModel.utilisateur">
+        <MappingFragment StoreEntitySet="utilisateur">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="profil" ColumnName="profil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

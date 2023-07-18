@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MetierGestionStock.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MetierGestionStock.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfproduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="produit" nillable="true" type="tns:produit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproduit" nillable="true" type="tns:ArrayOfproduit" />
+  <xs:complexType name="produit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prix" type="xs:double" />
+      <xs:element minOccurs="0" name="Quantite" type="xs:double" />
+      <xs:element minOccurs="0" name="QuantiteMin" type="xs:double" />
+      <xs:element minOccurs="0" name="cat_id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="produit" nillable="true" type="tns:produit" />
+  <xs:complexType name="ArrayOfcategorieproduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="categorieproduit" nillable="true" type="tns:categorieproduit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcategorieproduit" nillable="true" type="tns:ArrayOfcategorieproduit" />
+  <xs:complexType name="categorieproduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cat_id" type="xs:int" />
+      <xs:element minOccurs="0" name="cat_nom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="categorieproduit" nillable="true" type="tns:categorieproduit" />
+  <xs:complexType name="ArrayOfJointureProduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JointureProduit" nillable="true" type="tns:JointureProduit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJointureProduit" nillable="true" type="tns:ArrayOfJointureProduit" />
+  <xs:complexType name="JointureProduit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catNom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="libelle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prix" type="xs:double" />
+      <xs:element minOccurs="0" name="quantite" type="xs:double" />
+      <xs:element minOccurs="0" name="quantiteMin" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JointureProduit" nillable="true" type="tns:JointureProduit" />
+  <xs:complexType name="ArrayOfReportProduitStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportProduitStock" nillable="true" type="tns:ReportProduitStock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportProduitStock" nillable="true" type="tns:ArrayOfReportProduitStock" />
+  <xs:complexType name="ReportProduitStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categorie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prix" type="xs:double" />
+      <xs:element minOccurs="0" name="produit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quantite" type="xs:double" />
+      <xs:element minOccurs="0" name="quantiteMin" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportProduitStock" nillable="true" type="tns:ReportProduitStock" />
+  <xs:complexType name="ArrayOfstock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="stock" nillable="true" type="tns:stock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstock" nillable="true" type="tns:ArrayOfstock" />
+  <xs:complexType name="stock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeProduit" type="xs:int" />
+      <xs:element minOccurs="0" name="DateStockage" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantite" type="xs:double" />
+      <xs:element minOccurs="0" name="nomProduit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="stock" nillable="true" type="tns:stock" />
+  <xs:complexType name="utilisateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profil" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="utilisateur" nillable="true" type="tns:utilisateur" />
+</xs:schema>

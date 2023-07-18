@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gestionstockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="approvisionnement">
+    <Key>
+      <PropertyRef Name="idApp" />
+    </Key>
+    <Property Name="idApp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="qteProd" Type="Double" Nullable="false" />
+    <Property Name="idProduit" Type="Int32" Nullable="false" />
+    <Property Name="datePeremption" Type="DateTime" Nullable="false" />
+    <Property Name="dateApp" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="categorieproduit">
+    <Key>
+      <PropertyRef Name="cat_id" />
+    </Key>
+    <Property Name="cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cat_nom" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="produit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantite" Type="Double" Nullable="false" />
+    <Property Name="QuantiteMin" Type="Double" Nullable="false" />
+    <Property Name="Prix" Type="Double" Nullable="false" />
+    <Property Name="cat_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodeProduit" Type="Int32" Nullable="false" />
+    <Property Name="nomProduit" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateStockage" Type="DateTime" Nullable="false" />
+    <Property Name="Quantite" Type="Double" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="utilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="profil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="gestionstockEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="approvisionnement" EntityType="Self.approvisionnement" />
+    <EntitySet Name="categorieproduit" EntityType="Self.categorieproduit" />
+    <EntitySet Name="produit" EntityType="Self.produit" />
+    <EntitySet Name="stock" EntityType="Self.stock" />
+    <EntitySet Name="utilisateur" EntityType="Self.utilisateur" />
+  </EntityContainer>
+</Schema>
